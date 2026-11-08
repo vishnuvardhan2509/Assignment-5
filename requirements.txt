@@ -1,0 +1,14 @@
+fastapi==0.141.1
+uvicorn==0.54.0
+scikit-learn==1.8.0
+pandas==2.2.3
+joblib==1.5.3
+numpy==2.3.5
+requests==2.34.2
+mlflow==3.18.0
+ray[serve]==2.60.0
+pyyaml==6.0.3
+pytest==9.2.0
+httpx==0.28.1
+matplotlib==3.10.8
+Pillow==13.0.0

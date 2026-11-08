@@ -1,0 +1,9 @@
+Verification summary extracted from the completed 2-CPU Ray run. Verbose internal deployment logs omitted from GitHub export.
+
+candidate share: 0.212
+200 repeat customers: PASS
+200 after redeploy: PASS
+no candidate returns to prod: PASS
+50 overrides: PASS
+
+Verifier exit status: 0

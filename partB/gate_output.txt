@@ -1,0 +1,73 @@
+2026/11/08 13:07:42 INFO mlflow.agent.hint: Load the `mlflow-trace-instrumentation` skill at /workspace/work/venv/lib/python3.12/site-packages/mlflow/assistant/skills/mlflow-trace-instrumentation/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+/workspace/work/venv/lib/python3.12/site-packages/mlflow/pyfunc/utils/data_validation.py:187: UserWarning: [33mAdd type hints to the `predict` method to enable data validation and automatic signature inference during model logging. Check https://mlflow.org/docs/latest/model/python_model.html#type-hint-usage-in-pythonmodel for more details.[0m
+  color_warning(
+2026/11/08 13:07:45 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/11/08 13:07:45 INFO mlflow.store.db.utils: Updating database tables
+/workspace/work/venv/lib/python3.12/site-packages/mlflow/types/utils.py:440: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+2026/11/08 13:07:47 WARNING mlflow.pyfunc: Passing a Python object as `python_model` causes it to be serialized using CloudPickle, it requires exercising caution as Python object serialization mechanisms may execute arbitrary code during deserialization.Consider using a file path (str or Path) instead. See https://mlflow.org/docs/latest/ml/model/models-from-code/ for details.
+2026/11/08 13:07:47 INFO mlflow.pyfunc: Validating input example against model signature
+Successfully registered model 'eta-model'.
+Created version '1' of model 'eta-model'.
+/workspace/work/venv/lib/python3.12/site-packages/mlflow/types/utils.py:440: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+2026/11/08 13:07:48 WARNING mlflow.pyfunc: Passing a Python object as `python_model` causes it to be serialized using CloudPickle, it requires exercising caution as Python object serialization mechanisms may execute arbitrary code during deserialization.Consider using a file path (str or Path) instead. See https://mlflow.org/docs/latest/ml/model/models-from-code/ for details.
+2026/11/08 13:07:48 INFO mlflow.pyfunc: Validating input example against model signature
+Registered model 'eta-model' already exists. Creating a new version of this model...
+Created version '2' of model 'eta-model'.
+{
+  "registry": [
+    {
+      "version": 1,
+      "alias": "prod",
+      "bundle": "v1"
+    },
+    {
+      "version": 2,
+      "alias": "candidate",
+      "bundle": "v2"
+    }
+  ],
+  "default": {
+    "prod": {
+      "mae": 11.9553,
+      "mae_rush": 19.679859894921194,
+      "mae_rain": 11.622736418511066,
+      "p95_ms": 4.791973200021003
+    },
+    "candidate": {
+      "mae": 6.104850000000001,
+      "mae_rush": 8.579509632224168,
+      "mae_rain": 6.285311871227364,
+      "p95_ms": 4.699333849980289
+    },
+    "criteria": {
+      "overall_gain": true,
+      "latency": true,
+      "rush_slice": true,
+      "rain_slice": true
+    },
+    "promote": true
+  },
+  "gain_60_percent": {
+    "prod": {
+      "mae": 11.9553,
+      "mae_rush": 19.679859894921194,
+      "mae_rain": 11.622736418511066,
+      "p95_ms": 4.9401881500031655
+    },
+    "candidate": {
+      "mae": 6.104850000000001,
+      "mae_rush": 8.579509632224168,
+      "mae_rain": 6.285311871227364,
+      "p95_ms": 5.426743200008839
+    },
+    "criteria": {
+      "overall_gain": false,
+      "latency": true,
+      "rush_slice": true,
+      "rain_slice": true
+    },
+    "promote": false
+  }
+}
